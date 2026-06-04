@@ -57,7 +57,6 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     text = (
         f"🎰 *Selamat datang di BetBot, {user.first_name}!*\n\n"
-        "Virtual betting game untuk grup Telegram.\n"
         "Semua menggunakan koin virtual — bebas risiko! 😄\n\n"
         "Kamu mendapat *1,000 🪙* koin awal.\n"
         "Gunakan /help untuk panduan lengkap."
