@@ -4,10 +4,10 @@ import database as db
 
 
 HELP_TEXT = """
-🎰 *BETBOT — Panduan Lengkap*
+🎰 *BETTING BOT — Panduan Lengkap*
 
 ━━━━━━━━━━━━━━━
-💰 *EKONOMI*
+💰 *BANK*
 ━━━━━━━━━━━━━━━
 /saldo — Cek koin kamu
 /daily — Ambil reward harian (+200 🪙)
@@ -56,7 +56,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     ]]
 
     text = (
-        f"🎰 *Selamat datang di BetBot, {user.first_name}!*\n\n"
+        f"🎰 *Selamat datang di Betting Bot, {user.first_name}!*\n\n"
         "Semua menggunakan koin virtual — bebas risiko! 😄\n\n"
         "Kamu mendapat *1,000 🪙* koin awal.\n"
         "Gunakan /help untuk panduan lengkap."
