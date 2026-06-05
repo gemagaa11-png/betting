@@ -44,6 +44,13 @@ Mode PvP: `suit`, `coinflip`, `dadu`
 
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    # Di grup, hanya respons jika ada @mention bot
+    if update.message.chat.type != "private":
+        bot_username = (await context.bot.get_me()).username
+        text = update.message.text or ""
+        if f"@{bot_username}".lower() not in text.lower():
+            return
+
     user = update.effective_user
     db.get_user(user.id, user.username or user.first_name)
 
@@ -154,13 +161,11 @@ async def transfer(update: Update, context: ContextTypes.DEFAULT_TYPE):
         )
         return
 
-    # Simpan pending transfer di context
     context.user_data["pending_transfer"] = {
         "target_username": target_mention,
         "amount": amount
     }
 
-    # Cari user di DB berdasarkan username
     all_users = db._load()
     target_data = None
     for uid, udata in all_users.items():
